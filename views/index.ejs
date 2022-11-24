@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Homepage Pinterin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <body>
+        <div class="menu">
+          <img draggable="false" class="logo" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/pinterest-512.png">
+          <a href="/index" class="home" >Home</a>
+          <a href="/posts/create" class="home" >Create</a>
+          <div style="width:100% ;">
+            <form action="/index" method="get">
+              <input id="one" type="text" class="search-bar" name="search" placeholder="Search">
+              <button id="two" class="search-bar"></button>
+            </form>
+          </div>
+          <div class="icon-container">
+
+            <a href="/profile/"> 
+                <img tabindex="1" draggable="false" class="icon pp" src="https://i.pinimg.com/564x/bd/94/ce/bd94ce28cf8aefb521bac31d547f6409.jpg">
+             </a>
+          
+            
+            <img tabindex="1" draggable="false" class="icon btn" src="https://i.hizliresim.com/g15mqud.png">
+            
+            <!----FOCUS----->
+            <div tabindex="1" class="focus-bar bell-bar">nothing</div>
+            <!-------------------->
+            <div tabindex="1" class="focus-bar message-bar">you are alone</div>
+            <!-------------------->
+            <div tabindex="1" class="focus-bar pp-bar"><img src="https://i.pinimg.com/564x/bd/94/ce/bd94ce28cf8aefb521bac31d547f6409.jpg"><a href="https://github.com/devrimos" target="_blank">devrimos</a></div>
+            <!-------------------->
+            <div tabindex="1" class="focus-bar btn-bar">¯\_( ͡° ͜ʖ ͡°)_/¯</div>
+         
+          </div>
+        </div>
+        <!--------------------------->
+        <div class="responsive-search-bar">
+            <input type="text">
+            <p class="close">❌</p>
+          </div>
+        <!--------------------------->
+        
+        <div class="container">
+            <% user.forEach((el) => { %>
+            <div class="window">
+              <img class="foto"" src="<%= el.url %>">
+              <p class="content"><%= el.title %></p>
+              <p class="content-2"><%= el.description %></p>
+              <img class="user" src="<%= el.User.Profile.photo%>">
+              <a class="username"><%=userVerified(el.User.username)%></a><br>
+              <a href="/delete/<%=el.id%>"><button type="submit" class="home">Delete</button></a>
+            </div>
+            <% }) %>           
+        </div>
+      </body>
+  </body>
+</html>
